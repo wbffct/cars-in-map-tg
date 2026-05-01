@@ -12,6 +12,9 @@ export const buildDeeplink = (licensePlateNumber: string): string => {
 
 export const mapRawCar = (car: RawCar): Car => {
   const plate = car.license_plate_number.toUpperCase();
+  const brand = car.Brand?.trim() ?? '';
+  const model = car.Model?.trim() ?? '';
+  const name = [brand, model].filter(Boolean).join(' ') || plate;
 
   return {
     carId: car.car_id,
@@ -19,6 +22,9 @@ export const mapRawCar = (car: RawCar): Car => {
     lon: car.longitude,
     hex: car.hex,
     plate,
+    brand,
+    model,
+    name,
     deeplinkUrl: buildDeeplink(plate),
   };
 };

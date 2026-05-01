@@ -3,6 +3,7 @@ dist/
 *.tsbuildinfo
 public/cars.json
 README.md
+plan.md
 .DS_Store
 .env
 .env.*

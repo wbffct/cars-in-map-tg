@@ -4,6 +4,8 @@ export type RawCar = {
   longitude: number;
   hex: string;
   license_plate_number: string;
+  Brand?: string;
+  Model?: string;
 };
 
 export type Car = {
@@ -12,5 +14,8 @@ export type Car = {
   lon: number;
   hex: string;
   plate: string;
+  brand: string;
+  model: string;
+  name: string;
   deeplinkUrl: string;
 };
